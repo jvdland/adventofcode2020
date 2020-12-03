@@ -13,12 +13,11 @@ def make_a_map():
 
 def move_to_new_pos(current_pos, slope, map):
     max_x_pos = len(map[0]) - 1
-    if  (current_pos[0] + slope[0]) > max_x_pos  :
-        #start over
-        x = current_pos[0] + slope[0] - max_x_pos - 1
-    else:
-        x = current_pos[0]+slope[0]
     y = current_pos[1]+slope[1]
+    x = current_pos[0]+slope[0]
+    if x > max_x_pos  :
+        #start over
+        x = x - max_x_pos - 1
     return [x, y]
 
 def is_there_a_tree_here(pos, map):
